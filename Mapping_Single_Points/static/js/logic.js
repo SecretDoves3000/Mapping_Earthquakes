@@ -3,8 +3,8 @@ console.log("working");
 
 //create the map object
 let map = L.map("mapid", {
-    center: [40.7,-94.5],
-    zoom: 4
+    center: [34.0522, -118.2437],
+    zoom: 14
 });
 
 // We create the tile layer that will be the background of our map.
@@ -16,5 +16,13 @@ let streets = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{
     zoomOffset: -1,
     accessToken: API_KEY
 });
+
 // Then we add our 'graymap' tile layer to the map.
 streets.addTo(map);
+
+//circle
+L.circle([34.0522, -118.2437], {
+    radius: 300,
+    color: "black",
+    fillColor: "#ffffa1"
+ }).addTo(map);
